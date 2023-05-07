@@ -30,7 +30,9 @@ const phone = ref('')
 
 <style lang="scss" scoped>
 .section-hero {
+  max-width: 1344px;
   display: flex;
+  margin: 0 auto;
 
   &__text {
     @include font(18px, 26px);
