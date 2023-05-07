@@ -1,17 +1,23 @@
-$color--danger: #eb5757;
-$color--success: #6fcf97;
-$color--warning: #f2c94c;
-$color--primary: #195abc;
-$color--disabled: rgba($color--primary, 0.5);
-$color--background: #f4f2ff;
-$color--background-gradient: linear-gradient(180deg, #F3F8FE 0%, #F5F2FF 100%);
-$color--divider: #e7e7e7;
-$color--hover-white: #d2d2d2;
-$color--black: #333;
-$color--black-secondary: #1a1a1a;
-$color--gray: #828282;
-$color--gray-secondary: #F9F9F9;
-$color--pink: #e63389;
-$color--blue: #56ccf2;
-$color--violet: #675dd1;
 $color--white: #fff;
+$color--primary: #CE946B;
+$color--beige: #C5988F;
+$color--beige_1: #E4BEB5;
+$color--beige_2: #EDD5D0;
+$color--beige_3: #E5B093;
+$color--pink: #EAB1B4;
+$color--text: #34343F;
+$color--gray: #9D9DB0;
+$color--bg: #313140;
+
+
+$colors: (
+  ('white', $color--white),
+  ('primary', $color--primary),
+  ('beige', $color--beige),
+  ('beige-1', $color--beige_1),
+  ('beige-2', $color--beige_2),
+  ('beige-3', $color--beige_3),
+  ('pink', $color--pink),
+  ('text', $color--text),
+  ('bg', $color--bg),
+)

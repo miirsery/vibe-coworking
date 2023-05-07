@@ -2,9 +2,7 @@
   <div class="main-layout">
     <div class="main-layout__content-wrapper">
       <div class="main-layout__content">
-        <div class="main-layout__container">
-          <router-view />
-        </div>
+        <router-view />
       </div>
     </div>
   </div>
@@ -16,7 +14,6 @@
   height: 100%;
   position: relative;
   display: flex;
-  background: $color--background-gradient;
 
   &__content-wrapper {
     width: 100%;
@@ -30,19 +27,18 @@
     }
   }
 
-  &__content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-
-    @include responsive(xs, $breakpoints-only-max) {
-      padding: 0 10px 40px;
-    }
-  }
+  //&__content {
+  //  width: 100%;
+  //  height: 100%;
+  //  display: flex;
+  //  justify-content: center;
+  //  padding: 50px;
+  //  overflow-x: hidden;
+  //  overflow-y: scroll;
+  //  @include responsive(xs, $breakpoints-only-max) {
+  //    padding: 0 10px 40px;
+  //  }
+  //}
 
   &__container {
     width: 100%;
