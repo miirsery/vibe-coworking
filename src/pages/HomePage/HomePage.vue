@@ -15,6 +15,6 @@ import SectionHero from '@/components/SectionHero/SectionHero.vue'
 
 <style lang="scss" scoped>
 .hero {
-  background-color: #363348;
+  background-color: $color--black;
 }
 </style>

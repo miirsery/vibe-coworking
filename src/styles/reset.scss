@@ -101,7 +101,15 @@ textarea {
 
 button,
 input {
+  border: none;
+  background: none;
   overflow: visible;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border: none;
+  }
 }
 
 button,
