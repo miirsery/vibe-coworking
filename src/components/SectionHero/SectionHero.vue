@@ -17,24 +17,40 @@
 
       <div class="section-hero__girl-content">
         <div class="section-hero__girl-wrapper">
-          <div class="section-hero__girl-stat"> лэшмейкер </div>
-          <div class="section-hero__girl-stat"> бровист </div>
-          <div class="section-hero__girl-stat"> косметолог </div>
-          <div class="section-hero__girl-stat"> массажист </div>
+          <div id="stat-1" class="section-hero__girl-stat"> лэшмейкер </div>
+          <div id="stat-2" class="section-hero__girl-stat"> бровист </div>
+          <div id="stat-3" class="section-hero__girl-stat"> косметолог </div>
+          <div id="stat-4" class="section-hero__girl-stat"> массажист </div>
 
           <div class="section-hero__girl-line">
-            <base-icon name="line-1" width="61" height="103" />
+            <svg width="62" height="104" viewBox="0 0 62 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="57.5" cy="99.5" r="4.5" fill="white" />
+              <path id="line-1" d="M58 101L1 1" stroke="white" stroke-dasharray="3" />
+              <circle cx="57.5" cy="99.5" r="2.5" fill="#C5988F" />
+            </svg>
           </div>
           <div class="section-hero__girl-line">
-            <base-icon name="line-2" width="107" height="153" />
+            <svg width="108" height="154" viewBox="0 0 108 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="line-2" d="M5 149L107.5 1" stroke="white" stroke-dasharray="3" />
+              <circle cx="4.5" cy="149.5" r="4.5" fill="white" />
+              <circle cx="4.5" cy="149.5" r="2.5" fill="#C5988F" />
+            </svg>
           </div>
           <div class="section-hero__girl-line">
-            <base-icon name="line-3" width="105" height="133" />
+            <svg width="106" height="134" viewBox="0 0 106 134" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="101.5" cy="4.5" r="4.5" fill="white" />
+              <path id="line-3" d="M0.5 133.5L101.5 4.5" stroke="white" stroke-dasharray="3" />
+              <circle cx="101.5" cy="4.5" r="2.5" fill="#C5988F" />
+            </svg>
           </div>
           <div class="section-hero__girl-line">
-            <base-icon name="line-4" width="85" height="120" />
+            <svg width="86" height="121" viewBox="0 0 86 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="line-4" ref="lineFour" d="M85 120L5 5" stroke="white" stroke-dasharray="3" />
+              <circle cx="4.5" cy="4.5" r="4.5" fill="white" />
+              <circle cx="4.5" cy="4.5" r="2.5" fill="#C5988F" />
+            </svg>
           </div>
-          <div class="section-hero__girl">
+          <div id="hero-girl" class="section-hero__girl">
             <img src="images/static/girl-v1.png" />
           </div>
         </div>
@@ -47,12 +63,57 @@
 
 <script setup lang="ts">
 import BaseInput from '@/components/atoms/Base/BaseInput/BaseInput.vue'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import BaseButton from '@/components/atoms/Base/BaseButton/BaseButton.vue'
 import HeroConveniences from '@/components/SectionHero/HeroConveniences/HeroConveniences.vue'
-import BaseIcon from '@/components/atoms/Base/BaseIcon/BaseIcon.vue'
+import gsap from 'gsap'
 
 const phone = ref('')
+const lineFour = ref()
+
+gsap.registerPlugin(DrawSVGPlugin)
+
+onMounted(() => {
+  gsap.fromTo('#hero-girl', { opacity: 0, y: 100, scale: 0.9 }, { opacity: 1, y: 1, duration: 1, scale: 1 })
+
+  gsap.defaults({
+    strokeDasharray: '0 3',
+  })
+
+  gsap.fromTo(
+    'stat-1',
+    {
+      duration: 1.5,
+      ease: 'power4.inOut',
+      scale: 0,
+    },
+    {
+      duration: 1.5,
+      ease: 'power4.inOut',
+      scale: 1,
+    }
+  )
+
+  gsap.from('#line-1', {
+    duration: 1.5,
+    ease: 'power4.inOut',
+  })
+
+  gsap.from('#line-2', {
+    duration: 1.5,
+    ease: 'power4.inOut',
+  })
+
+  gsap.from('#line-3', {
+    duration: 1.5,
+    ease: 'power4.inOut',
+  })
+
+  gsap.from('#line-4', {
+    duration: 1.5,
+    ease: 'power4.inOut',
+  })
+})
 </script>
 
 <style lang="scss" scoped>
