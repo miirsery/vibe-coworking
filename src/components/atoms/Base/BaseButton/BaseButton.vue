@@ -32,6 +32,7 @@
 
   &__inner {
     color: $color--white;
+    cursor: pointer;
     margin-right: 20px;
   }
 

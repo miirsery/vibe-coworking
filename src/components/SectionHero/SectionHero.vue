@@ -1,7 +1,7 @@
 <template>
   <section class="section-hero">
-    <div class="section-hero__info">
-      <div class="w-50">
+    <div class="section-hero__info-wrapper">
+      <div class="section-hero__info">
         <h2 class="mb-26">БЬЮТИ КОВОРКИНГ ДЛЯ <span>ПРИКЛАДНЫХ ЭСТЕТОВ</span> 4 СФЕР</h2>
         <div class="section-hero__text">
           Занимайтесь любимым делом, зарабатывая до <span class="color-pink bold">1 000 000 руб./год</span>, арендуя
@@ -15,7 +15,7 @@
         </form>
       </div>
 
-      <div class="w-50">
+      <div class="section-hero__girl-content">
         <div class="section-hero__girl-wrapper">
           <div class="section-hero__girl-stat"> лэшмейкер </div>
           <div class="section-hero__girl-stat"> бровист </div>
@@ -28,8 +28,14 @@
           <div class="section-hero__girl-line">
             <base-icon name="line-2" width="107" height="153" />
           </div>
+          <div class="section-hero__girl-line">
+            <base-icon name="line-3" width="105" height="133" />
+          </div>
+          <div class="section-hero__girl-line">
+            <base-icon name="line-4" width="85" height="120" />
+          </div>
           <div class="section-hero__girl">
-            <img src="images/static/girl.png" />
+            <img src="images/static/girl-v1.png" />
           </div>
         </div>
       </div>
@@ -55,12 +61,26 @@ const phone = ref('')
   margin: 0 auto;
 
   &__info {
-    width: 100%;
-    display: flex;
+    width: 40%;
+
+    &-wrapper {
+      width: 100%;
+      display: flex;
+    }
   }
 
   &__girl {
+    top: -158px;
+    left: -40px;
+    position: absolute;
+    z-index: 1;
+
+    &-content {
+      width: 60%;
+    }
+
     &-wrapper {
+      height: 100%;
       position: relative;
     }
 
@@ -70,13 +90,23 @@ const phone = ref('')
       z-index: 2;
 
       &:nth-child(5) {
-        top: 0;
-        left: 0;
+        top: 125px;
+        left: 315px;
       }
 
       &:nth-child(6) {
-        top: 0;
-        right: 0;
+        top: 50px;
+        right: 210px;
+      }
+
+      &:nth-child(7) {
+        left: 340px;
+        bottom: -100px;
+      }
+
+      &:nth-child(8) {
+        right: 250px;
+        bottom: 30px;
       }
     }
 
@@ -85,37 +115,31 @@ const phone = ref('')
       position: absolute;
       border: double 4px transparent;
       border-radius: 21px;
-      background-image: linear-gradient($color--beige_2, $color--beige_2),
-        radial-gradient(circle at top left, #c68b61, #f5d6bf);
+      background-image: linear-gradient(#edd5d0, #edd5d0), radial-gradient(circle at 104px 0, #c68b61, #f5d6bf);
       background-origin: border-box;
       background-clip: padding-box, border-box;
       padding: 10px 20px;
+      z-index: 3;
 
       &:nth-child(1) {
-        top: 0;
-        left: 0;
+        top: 105px;
+        left: 185px;
       }
 
       &:nth-child(2) {
-        top: 0;
-        right: 0;
+        top: 35px;
+        right: 105px;
       }
 
       &:nth-child(3) {
-        left: 0;
-        bottom: 0;
+        left: 210px;
+        bottom: -110px;
       }
 
       &:nth-child(4) {
-        right: 0;
-        bottom: 0;
+        right: 126px;
+        bottom: 20px;
       }
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
   }
 

@@ -14,7 +14,16 @@ import SectionHero from '@/components/SectionHero/SectionHero.vue'
 </script>
 
 <style lang="scss" scoped>
+.home-page {
+  height: 100%;
+}
+
 .hero {
-  background-color: $color--black;
+  height: 100%;
+  background: $color--black url('/images/static/hero-bg.png') no-repeat;
+
+  &-page {
+    height: 100%;
+  }
 }
 </style>
